@@ -9,6 +9,8 @@ val Purple500 = Color(0xFF6200EE)
 val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 
+val MediumGray = Color(0xFF2E2E2E)
+
 val Colors.buttonColor
     get() = "#FF882CD1".color
 

@@ -20,7 +20,7 @@ import com.example.quizapp.ui.theme.buttonColor
 fun CircleButton(
     text: String,
     shape: RoundedCornerShape,
-    onClick: (() -> Unit)?
+    onClick: () -> Unit
 ){
     Button(
         onClick= {
