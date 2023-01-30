@@ -1,4 +1,4 @@
-package com.example.quizapp.ui
+package com.example.quizapp.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -8,15 +8,13 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.example.quizapp.ClickEvents
 import com.example.quizapp.ui.composables.CircleButton
 import com.example.quizapp.ui.composables.SquareButton
 import com.example.quizapp.ui.theme.backgroundColor
 
 @Composable
-fun MainPage(
-    onAction: (ClickEvents) -> Unit
-) {
+fun ChoseQuiz(){
+
     Column(
 
         modifier = Modifier
@@ -30,7 +28,7 @@ fun MainPage(
             horizontalArrangement = Arrangement.Center
         ) {
             SquareButton(
-                text = "QUIZ APP",
+                text = "CHOSE QUIZ",
                 shape = RoundedCornerShape(40),
             )
         }
@@ -39,9 +37,9 @@ fun MainPage(
             horizontalArrangement = Arrangement.Center
         ) {
             CircleButton(
-                text = "START",
+                text = "Quiz1",
                 shape = CircleShape,
-                onClick = { onAction(ClickEvents.Start) }
+                onClick = {  }
             )
         }
         Row(
@@ -49,9 +47,9 @@ fun MainPage(
             horizontalArrangement = Arrangement.Center
         ) {
             CircleButton(
-                text = "Account",
+                text = "Quiz2",
                 shape = CircleShape,
-                onClick = { onAction(ClickEvents.Account) }
+                onClick = {  }
             )
         }
         Row(
@@ -59,9 +57,9 @@ fun MainPage(
             horizontalArrangement = Arrangement.Center
         ) {
             CircleButton(
-                text = "Create Quiz",
+                text = "Quiz3",
                 shape = CircleShape,
-                onClick = { onAction(ClickEvents.CreateQuiz) }
+                onClick = { }
             )
         }
     }
