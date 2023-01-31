@@ -23,9 +23,7 @@ fun CircleButton(
     onClick: () -> Unit
 ){
     Button(
-        onClick= {
-            onClick
-        },
+        onClick= onClick,
         colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.buttonColor),
         modifier = Modifier
             .size(180.dp),
@@ -36,7 +34,7 @@ fun CircleButton(
     {
         Text(
             text = text,
-            color = androidx.compose.ui.graphics.Color.Black,
+            color = Color.Black,
             fontSize = 20.sp)
     }
 }

@@ -8,16 +8,18 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.quizapp.navigation.Screen
 import com.example.quizapp.ui.composables.CircleButton
 import com.example.quizapp.ui.composables.SquareButton
 import com.example.quizapp.ui.theme.backgroundColor
 
 @Composable
 fun MainPage(
-    onNavigateToChoseQuiz: () -> Unit
+    navController: NavController
 ) {
-    val navController = rememberNavController()
     
     Column(
 
@@ -43,7 +45,7 @@ fun MainPage(
             CircleButton(
                 text = "START",
                 shape = CircleShape,
-                onClick = { onNavigateToChoseQuiz }
+                onClick = { navController.navigate(route = Screen.ChoseQuizPage.route) }
             )
         }
         Row(
@@ -67,4 +69,12 @@ fun MainPage(
             )
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MainPagePreview() {
+    MainPage(
+        navController = rememberNavController()
+    )
 }

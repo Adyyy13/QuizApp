@@ -8,12 +8,16 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
+import com.example.quizapp.navigation.Screen
 import com.example.quizapp.ui.composables.CircleButton
 import com.example.quizapp.ui.composables.SquareButton
 import com.example.quizapp.ui.theme.backgroundColor
 
 @Composable
-fun ChoseQuiz(){
+fun ChoseQuiz(
+    navController: NavController
+){
 
     Column(
 
@@ -39,7 +43,7 @@ fun ChoseQuiz(){
             CircleButton(
                 text = "Quiz1",
                 shape = CircleShape,
-                onClick = {  }
+                onClick = { navController.navigate(route = Screen.MainPage.route) }
             )
         }
         Row(

@@ -1,29 +1,29 @@
 package com.example.quizapp.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.example.quizapp.ui.screens.MainPage
 import com.example.quizapp.ui.screens.ChoseQuiz
+import com.example.quizapp.ui.screens.MainPage
 
 @Composable
 fun Navigation(
-    modifier: Modifier = Modifier,
-    navController: NavHostController = rememberNavController(),
-    startDestination: String = "main_page"
+    navController: NavHostController
 ) {
     NavHost(
-        modifier = modifier,
         navController = navController,
-        startDestination = startDestination
+        startDestination = Screen.MainPage.route
     ) {
-        composable("main_page") {
-            MainPage(
-                onNavigateToChoseQuiz = { navController.navigate("chose_quiz_page")}
-        ) }
-        composable("chose_quiz_page") { ChoseQuiz() }
+        composable(
+            route = Screen.MainPage.route
+        ) {
+            MainPage(navController = navController)
+        }
+        composable(
+            route = Screen.ChoseQuizPage.route
+        ) {
+            ChoseQuiz(navController = navController)
+        }
     }
 }
