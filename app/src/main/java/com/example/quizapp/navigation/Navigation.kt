@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.quizapp.ui.screens.ChoseQuiz
+import com.example.quizapp.ui.screens.LoginPage
 import com.example.quizapp.ui.screens.MainPage
 
 @Composable
@@ -24,6 +25,21 @@ fun Navigation(
             route = Screen.ChoseQuizPage.route
         ) {
             ChoseQuiz(navController = navController)
+        }
+        composable(
+            route = Screen.QuestionPage.route
+        ) {
+            // TODO
+        }
+        composable(
+            route = Screen.LoginPage.route
+        ) {
+            LoginPage(navController = navController)
+        }
+        composable(
+            route = Screen.ResultPage.route
+        ) {
+            // TODO
         }
     }
 }

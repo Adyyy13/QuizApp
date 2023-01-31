@@ -13,6 +13,7 @@ import com.example.quizapp.navigation.Navigation
 import com.example.quizapp.ui.theme.QuizAppTheme
 
 
+
 class MainActivity : ComponentActivity() {
 
     lateinit var navController: NavHostController
