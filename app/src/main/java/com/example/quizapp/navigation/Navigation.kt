@@ -1,6 +1,7 @@
 package com.example.quizapp.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -10,7 +11,8 @@ import com.example.quizapp.ui.screens.MainPage
 
 @Composable
 fun Navigation(
-    navController: NavHostController
+    navController: NavHostController,
+    counter: MutableState<Int>
 ) {
     NavHost(
         navController = navController,
@@ -19,7 +21,7 @@ fun Navigation(
         composable(
             route = Screen.MainPage.route
         ) {
-            MainPage(navController = navController)
+            MainPage(navController = navController, counter = counter)
         }
         composable(
             route = Screen.ChoseQuizPage.route

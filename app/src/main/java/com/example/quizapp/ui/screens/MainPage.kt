@@ -6,6 +6,8 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -18,7 +20,8 @@ import com.example.quizapp.ui.theme.backgroundColor
 
 @Composable
 fun MainPage(
-    navController: NavController
+    navController: NavController,
+    counter: MutableState<Int>
 ) {
     
     Column(
@@ -34,7 +37,7 @@ fun MainPage(
             horizontalArrangement = Arrangement.Center
         ) {
             SquareButton(
-                text = "QUIZ APP",
+                text = counter.value.toString(),
                 shape = RoundedCornerShape(40),
             )
         }
@@ -45,7 +48,9 @@ fun MainPage(
             CircleButton(
                 text = "START",
                 shape = CircleShape,
-                onClick = { navController.navigate(route = Screen.ChoseQuizPage.route) }
+                onClick = {
+                    navController.navigate(route = Screen.ChoseQuizPage.route)
+                    counter.value++}
             )
         }
         Row(
@@ -74,7 +79,5 @@ fun MainPage(
 @Preview(showBackground = true)
 @Composable
 fun MainPagePreview() {
-    MainPage(
-        navController = rememberNavController()
-    )
+
 }
