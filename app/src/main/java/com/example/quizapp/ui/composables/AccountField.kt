@@ -20,9 +20,10 @@ import androidx.navigation.NavController
 
 
 @Composable
-fun LoginField(){
+fun LoginField(
+    login: MutableState<String>
+){
 
-    val login = remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier
@@ -41,7 +42,7 @@ fun LoginField(){
         ) {
             Text(
                 text = "LOGIN",
-                color = androidx.compose.ui.graphics.Color.Black,
+                color = Color.Black,
                 fontSize = 20.sp
             )
         }
@@ -54,7 +55,7 @@ fun LoginField(){
         ) {
             Text(
                 text = "---------------------------",
-                color = androidx.compose.ui.graphics.Color.Black,
+                color = Color.Black,
                 fontSize = 20.sp
             )
         }
@@ -80,9 +81,10 @@ fun LoginField(){
 }
 
 @Composable
-fun PasswordField(){
+fun PasswordField(
+    password: MutableState<String>
+){
 
-    val password = remember { mutableStateOf(TextFieldValue("")) }
 
     Column(
         modifier = Modifier
@@ -101,7 +103,7 @@ fun PasswordField(){
             ) {
             Text(
                 text = "PASSWORD",
-                color = androidx.compose.ui.graphics.Color.Black,
+                color = Color.Black,
                 fontSize = 20.sp
             )
         }
@@ -114,7 +116,7 @@ fun PasswordField(){
             ) {
             Text(
                 text = "---------------------------",
-                color = androidx.compose.ui.graphics.Color.Black,
+                color = Color.Black,
                 fontSize = 20.sp
             )
         }
@@ -143,8 +145,7 @@ fun PasswordField(){
 
 @Composable
 fun SignInButton(
-    onClick: () -> Unit,
-    navController: NavController
+    onClick: () -> Unit
 ) {
     Button(
         onClick = onClick,

@@ -24,8 +24,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
            setContent {
                QuizAppTheme {
-                   val admin: String = "admin"
-                   val password: String = "password"
 
                    navController = rememberNavController()
 

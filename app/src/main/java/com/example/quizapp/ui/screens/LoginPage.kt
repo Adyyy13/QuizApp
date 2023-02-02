@@ -24,8 +24,11 @@ fun LoginPage(
     navController: NavController
 ) {
 
-    val login = remember { mutableStateOf("") }
-    val password = remember { mutableStateOf("") }
+    val loginCheck = "admin"
+    val passwordCheck = "password"
+
+    val login = remember {mutableStateOf("")}
+    val password = remember {mutableStateOf("")}
 
     Column(
 
@@ -48,7 +51,7 @@ fun LoginPage(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ) {
-            LoginField()
+            LoginField(login = login)
         }
         Row(
             modifier = Modifier
@@ -56,13 +59,17 @@ fun LoginPage(
                 .height(50.dp),
             horizontalArrangement = Arrangement.Center
         ) {
-            SignInButton(onClick = { navController.navigate(Screen.MainPage.route) }, navController = navController) // onclick with login (not working) if (password.value == "admin" && login.value == "admin") { navController.navigate(Screen.MainPage.route)}
+            SignInButton(
+                onClick = {
+                    if (password.value == passwordCheck && login.value == loginCheck) {
+                              navController.navigate(Screen.MainPage.route)
+                          }})
         }
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ) {
-            PasswordField()
+            PasswordField(password = password)
         }
         }
     }
