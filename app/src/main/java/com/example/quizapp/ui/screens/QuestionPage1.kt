@@ -6,6 +6,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
@@ -15,8 +16,9 @@ import com.example.quizapp.ui.composables.SquareButton
 import com.example.quizapp.ui.theme.backgroundColor
 
 @Composable
-fun ChoseQuiz(
-    navController: NavController
+fun QuestionPage1(
+    navController: NavController,
+    counter: MutableState<Int>
 ){
 
     Column(
@@ -32,7 +34,7 @@ fun ChoseQuiz(
             horizontalArrangement = Arrangement.Center
         ) {
             SquareButton(
-                text = "CHOSE QUIZ",
+                text = "Jaką wartość przechowuje String?",
                 shape = RoundedCornerShape(40),
             )
         }
@@ -41,9 +43,11 @@ fun ChoseQuiz(
             horizontalArrangement = Arrangement.Center
         ) {
             CircleButton(
-                text = "Junior Java",
+                text = "Ciąg znaków",
                 shape = CircleShape,
-                onClick = { navController.navigate(route = Screen.QuestionPage1.route) }
+                onClick = {
+                    navController.navigate(route = Screen.QuestionPage2.route)
+                    counter.value++}
             )
         }
         Row(
@@ -51,9 +55,9 @@ fun ChoseQuiz(
             horizontalArrangement = Arrangement.Center
         ) {
             CircleButton(
-                text = "Mid Java",
+                text = "Liczbę",
                 shape = CircleShape,
-                onClick = {  }
+                onClick = { navController.navigate(route = Screen.QuestionPage2.route) }
             )
         }
         Row(
@@ -61,9 +65,9 @@ fun ChoseQuiz(
             horizontalArrangement = Arrangement.Center
         ) {
             CircleButton(
-                text = "Sernior Java",
+                text = "Boolean",
                 shape = CircleShape,
-                onClick = { }
+                onClick = {navController.navigate(route = Screen.QuestionPage2.route) }
             )
         }
     }

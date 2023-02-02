@@ -20,8 +20,7 @@ import com.example.quizapp.ui.theme.backgroundColor
 
 @Composable
 fun MainPage(
-    navController: NavController,
-    counter: MutableState<Int>
+    navController: NavController
 ) {
     
     Column(
@@ -37,7 +36,7 @@ fun MainPage(
             horizontalArrangement = Arrangement.Center
         ) {
             SquareButton(
-                text = counter.value.toString(),
+                text = "Quizz App",
                 shape = RoundedCornerShape(40),
             )
         }
@@ -49,8 +48,7 @@ fun MainPage(
                 text = "START",
                 shape = CircleShape,
                 onClick = {
-                    navController.navigate(route = Screen.ChoseQuizPage.route)
-                    counter.value++}
+                    navController.navigate(route = Screen.ChoseQuizPage.route) }
             )
         }
         Row(

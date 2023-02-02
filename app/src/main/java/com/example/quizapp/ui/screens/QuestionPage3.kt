@@ -16,7 +16,7 @@ import com.example.quizapp.ui.composables.SquareButton
 import com.example.quizapp.ui.theme.backgroundColor
 
 @Composable
-fun QuestionPage(
+fun QuestionPage3(
     navController: NavController,
     counter: MutableState<Int>
 ){
@@ -34,7 +34,7 @@ fun QuestionPage(
             horizontalArrangement = Arrangement.Center
         ) {
             SquareButton(
-                text = "Question",
+                text = "Poprawna deklaracja zmiennej zmiennoprzecinkowej to",
                 shape = RoundedCornerShape(40),
             )
         }
@@ -43,9 +43,9 @@ fun QuestionPage(
             horizontalArrangement = Arrangement.Center
         ) {
             CircleButton(
-                text = "Answer1",
+                text = "int variable = 0;",
                 shape = CircleShape,
-                onClick = {  }
+                onClick = { navController.navigate(route = Screen.ResultPage.route) }
             )
         }
         Row(
@@ -53,9 +53,9 @@ fun QuestionPage(
             horizontalArrangement = Arrangement.Center
         ) {
             CircleButton(
-                text = "Answer2",
+                text = "float variable = 0",
                 shape = CircleShape,
-                onClick = {  }
+                onClick = { navController.navigate(route = Screen.ResultPage.route) }
             )
         }
         Row(
@@ -63,9 +63,10 @@ fun QuestionPage(
             horizontalArrangement = Arrangement.Center
         ) {
             CircleButton(
-                text = "Answer3",
+                text = "float double = 0;",
                 shape = CircleShape,
-                onClick = { }
+                onClick = { navController.navigate(route = Screen.ResultPage.route)
+                counter.value++}
             )
         }
     }

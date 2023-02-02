@@ -1,6 +1,7 @@
 package com.example.quizapp.ui.composables
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
@@ -35,8 +36,9 @@ fun SquareButton(
     )
     {
         Text(
+            modifier = Modifier.width(250.dp),
             text = text,
-            color = androidx.compose.ui.graphics.Color.Black,
+            color = Color.Black,
             fontSize = 20.sp
         )
     }
